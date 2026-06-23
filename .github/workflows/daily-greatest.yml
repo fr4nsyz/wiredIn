@@ -1,0 +1,39 @@
+name: daily greatest
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: install dependencies
+        run: |
+          pip install defusedxml certifi
+
+      - name: generate today's greatest
+        run: python todays_greatest.py
+
+      - name: commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "today's greatest" GREATEST_README.md video_script.md
+          if git diff --cached --quiet; then
+            echo "no changes to commit"
+          else
+            git commit -m "daily greatest: $(date +'%Y-%m-%d')"
+            git push
+          fi
