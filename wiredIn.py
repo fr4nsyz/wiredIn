@@ -813,74 +813,6 @@ Articles:
         return None
 
 
-def generate_script(articles, top_n=3):
-    api_key = os.environ.get("WIREDIN_API_KEY") or os.environ.get("NVIDIA_API_KEY")
-    model = os.environ.get("WIREDIN_MODEL", "qwen2.5-coder:7b")
-    stories = articles[:top_n]
-
-    story_block = "\n\n".join(
-        f"Story {i}: {a['title']}\nSource: {a['source']}\n{a.get('summary', '')[:200]}"
-        for i, a in enumerate(stories, 1)
-    )
-
-    prompt = f"""Write a 60-second short-form video script covering these cybersecurity stories. Format:
-
-HOOK: attention grabber (1 line)
-STORY 1: 2-3 sentences with key technical detail
-STORY 2: 2-3 sentences
-STORY 3: 2-3 sentences  
-CTA: closing line
-
-Rules: conversational, technically accurate, no emojis, no dashes, under 180 words.
-
-Stories:
-{story_block}"""
-
-    text, err = _safe_api_call(
-        {
-            "model": model,
-            "max_tokens": 1000,
-            "messages": [{"role": "user", "content": prompt}],
-        },
-        api_key,
-    )
-
-    if err:
-        return _script_local(stories)
-    return text
-
-
-def _script_local(stories):
-    lines = [
-        "=" * 50,
-        "VIDEO SCRIPT",
-        "=" * 50,
-        "",
-        "[HOOK]",
-        "What you need to know in security today.",
-        "",
-    ]
-    for i, a in enumerate(stories, 1):
-        lines.append(f"[STORY {i}]")
-        lines.append(f"Title: {a['title']}")
-        oneliner = make_oneliner(a.get("summary", ""), 120)
-        if oneliner:
-            lines.append(f"Key point: {oneliner}")
-        lines.append(f"Link: {a['link']}")
-        lines.append("")
-    lines.append("[CTA]")
-    lines.append("Follow for daily security updates.")
-    return "\n".join(lines)
-
-
-def export_script(script_text, path="wiredIn_script.md"):
-    now = datetime.now().strftime("%A, %B %d %Y")
-    content = f"# wiredIn video script\n\n*Generated {now}*\n\n---\n\n{script_text}\n"
-    with open(path, "w") as f:
-        f.write(content)
-    return path
-
-
 def strip_html(text):
     text = re.sub(r"<[^>]+>", "", text)
     text = unescape(text)
@@ -1440,10 +1372,6 @@ def main():
         "--intel", action="store_true", help="structured intel briefing"
     )
     parser.add_argument("--deep", action="store_true", help="detailed article view")
-    parser.add_argument("--script", action="store_true", help="generate video script")
-    parser.add_argument(
-        "--script-count", type=int, default=3, help="stories in script (default: 3)"
-    )
     parser.add_argument(
         "--no-cache", action="store_true", help="skip cache, force fetch"
     )
@@ -1632,11 +1560,10 @@ def main():
     display = all_articles[: args.limit]
 
     show_ai = False
-    if args.ai or args.script:
-        ai_count = len(display) if args.ai else args.script_count
-        all_articles = ai_summarize(all_articles, count=ai_count)
+    if args.ai:
+        all_articles = ai_summarize(all_articles, count=len(display))
         display = all_articles[: args.limit]
-        show_ai = args.ai
+        show_ai = True
 
     if args.intel:
         intel = ai_intel_brief(all_articles[:10]) if args.ai else None
@@ -1671,42 +1598,6 @@ def main():
         total = len(all_articles)
         print(f"  {DIM}  {len(display)} of {total} articles{RESET}")
         print()
-        return
-
-    if args.script:
-        script_stories = all_articles[: args.script_count]
-        script_text = generate_script(script_stories, top_n=args.script_count)
-
-        print()
-        print(f"  {DIM}{'─' * 62}{RESET}")
-        print(
-            f"  {BOLD}{MAGENTA}  🎬  video script{RESET}  {DIM}short form content{RESET}"
-        )
-        print(f"  {DIM}{'─' * 62}{RESET}")
-        print()
-
-        for line in script_text.split("\n"):
-            s = line.strip().upper()
-            if (
-                s.startswith("[")
-                or s.startswith("HOOK")
-                or s.startswith("STORY")
-                or s.startswith("CTA")
-            ):
-                print(f"    {BOLD}{CYAN}{line}{RESET}")
-            elif s.startswith("="):
-                print(f"    {DIM}{line}{RESET}")
-            else:
-                print(f"    {WHITE}{line}{RESET}")
-
-        print()
-        print(f"  {DIM}{'─' * 62}{RESET}")
-        print()
-
-        if args.export:
-            path = export_script(script_text)
-            print(f"  {GREEN}  script exported to {path}{RESET}")
-            print()
         return
 
     if args.json:

@@ -42,7 +42,6 @@ runs locally via [Ollama](https://ollama.com). defaults to `qwen2.5-coder:7b`:
 ollama pull qwen2.5-coder:7b
 wiredIn --ai                     one-liner summaries
 wiredIn --intel --ai             structured intel brief
-wiredIn --script                 video script from top stories
 ```
 
 use a different model:
@@ -130,7 +129,6 @@ wiredIn --event bsides
 | `--search` | keyword search |
 | `--export html` | export as styled HTML |
 | `--verbose` | full article summaries |
-| `--script` | short-form video script |
 
 ## security
 

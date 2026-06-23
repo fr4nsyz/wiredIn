@@ -259,57 +259,6 @@ def generate_readme(top_cves, top, now, cve_source_map, all_articles):
     return "\n".join(lines)
 
 
-def generate_video_script(top):
-    now = datetime.now(timezone.utc)
-    lines = []
-    lines.append("# Video Script \u2014 Today's Cybersecurity Hits")
-    lines.append("")
-    lines.append(f"*Generated {now.strftime('%A, %B %d %Y')}*")
-    lines.append("")
-    lines.append("---")
-    lines.append("")
-
-    # Hook
-    top_story = top[0][1] if top else None
-    if top_story:
-        lines.append("[HOOK]")
-        hook = f"Today in security: {top_story['title']}"
-        lines.append(hook)
-        lines.append("")
-
-    # Stories
-    for i, (score, a) in enumerate(top[:3], 1):
-        lines.append(f"[STORY {i}]")
-        lines.append(f"**Headline:** {a['title']}")
-        lines.append(f"**Source:** {a['source']} ({time_ago(a['date'])})")
-        summary = a.get("summary", "")
-        if summary:
-            one_liner = (
-                summary[: summary.index(". ") + 1] if ". " in summary else summary[:200]
-            )
-            lines.append(f"**Key detail:** {one_liner}")
-        if a.get("cves"):
-            lines.append(f"**CVEs:** {', '.join(a['cves'])}")
-        if a.get("tags"):
-            lines.append(f"**Tags:** {', '.join(a['tags'])}")
-        lines.append(f"**Link:** {a['link']}")
-        lines.append("")
-
-    # CTA
-    lines.append("[CTA]")
-    lines.append(
-        "Follow for daily cybersecurity updates. Like and share to spread the word."
-    )
-    lines.append("")
-
-    # Speaker notes
-    lines.append("---")
-    lines.append(
-        "*Speaker notes: Keep each story to 15-20 seconds. Total run time ~60 seconds.*"
-    )
-    return "\n".join(lines)
-
-
 def main():
     all_articles = fetch_articles()
     recent = get_recent(all_articles)
@@ -339,16 +288,9 @@ def main():
     with open(path_readme, "w") as f:
         f.write(readme)
 
-    # 3. Video script
-    script = generate_video_script(top)
-    path_script = os.path.join(base, "video_script.md")
-    with open(path_script, "w") as f:
-        f.write(script)
-
     print(linkedin)
     print(f"\n  \u2713 today's greatest    -> {path_linkedin}")
     print(f"  \u2713 GREATEST_README.md  -> {path_readme}")
-    print(f"  \u2713 video_script.md     -> {path_script}")
 
 
 if __name__ == "__main__":

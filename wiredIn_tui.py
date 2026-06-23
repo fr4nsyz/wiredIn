@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """wiredIn TUI - interactive terminal security intelligence aggregator"""
 
+import os
 import sys
+import urllib.request
 
 try:
     from textual.app import App, ComposeResult
     from textual.containers import VerticalScroll
-    from textual.widgets import Header, Link, Static
+    from textual.screen import Screen
+    from textual.widgets import Header, Link, Markdown, Static
     from textual.binding import Binding
     from textual import work
 except ImportError:
@@ -17,6 +20,32 @@ except ImportError:
     sys.exit(1)
 
 from datetime import datetime, timezone
+
+
+def _detect_raw_base() -> str:
+    try:
+        import subprocess
+
+        result = subprocess.run(
+            ["git", "config", "--get", "remote.origin.url"],
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        url = result.stdout.strip()
+        if not url:
+            return "https://raw.githubusercontent.com/fr4nsyz/wiredIn/main"
+        url = url.replace("git@github.com:", "").replace("https://github.com/", "")
+        url = url.replace(".git", "").strip("/")
+        parts = url.split("/")
+        if len(parts) >= 2:
+            return f"https://raw.githubusercontent.com/{parts[0]}/{parts[1]}/main"
+    except Exception:
+        pass
+    return "https://raw.githubusercontent.com/fr4nsyz/wiredIn/main"
+
+
+GITHUB_RAW_BASE = _detect_raw_base()
 
 from wiredIn import (
     fetch_feed,
@@ -31,6 +60,119 @@ from wiredIn import (
     CACHE_DIR,
     time_ago,
 )
+
+
+class GreatestScreen(Screen):
+    CSS = """
+    Screen {
+        background: #0d1117;
+    }
+    VerticalScroll {
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+    }
+    Markdown {
+        padding: 0 2;
+        margin: 0;
+    }
+    MarkdownH1 {
+        color: #39d2c0;
+        text-style: bold;
+    }
+    MarkdownH2 {
+        color: #58a6ff;
+        text-style: bold;
+    }
+    MarkdownH3 {
+        color: #e6edf3;
+        text-style: bold;
+    }
+    MarkdownParagraph, MarkdownListItem {
+        color: #c9d1d9;
+    }
+    MarkdownBlockQuote {
+        color: #8b949e;
+    }
+    MarkdownFence {
+        color: #d2a8ff;
+    }
+    MarkdownHorizontalRule {
+        color: #30363d;
+    }
+    MarkdownTable {
+        width: 100%;
+    }
+    #greatest-status {
+        height: 1;
+        dock: bottom;
+        padding: 0 1;
+        background: #161b22;
+        color: #8b949e;
+    }
+    """
+
+    BINDINGS = [
+        Binding("escape,q", "dismiss", "Back"),
+        Binding("r", "refresh", "Refresh"),
+    ]
+
+    def compose(self) -> ComposeResult:
+        yield Header(show_clock=True)
+        yield VerticalScroll(id="greatest-feed")
+        yield Static(id="greatest-status")
+
+    def on_mount(self) -> None:
+        self._set_status("fetching today's greatest from GitHub...")
+        self.fetch_greatest()
+
+    def _set_status(self, text: str) -> None:
+        self.query_one("#greatest-status", Static).update(f"  {text}")
+
+    @work(exclusive=True, thread=True)
+    def fetch_greatest(self) -> None:
+        file_name = "GREATEST_README.md"
+        content = None
+        try:
+            url = f"{GITHUB_RAW_BASE}/{file_name}"
+            req = urllib.request.Request(url, headers={"User-Agent": "wiredIn"})
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                content = resp.read().decode("utf-8")
+        except Exception:
+            pass
+
+        if content is None:
+            local_path = os.path.join(os.path.dirname(__file__), file_name)
+            try:
+                with open(local_path) as f:
+                    content = f.read()
+            except Exception:
+                pass
+
+        if content:
+            self.app.call_from_thread(self._display_content, content)
+        else:
+            self.app.call_from_thread(
+                self._display_error,
+                "file not found on GitHub or locally",
+            )
+
+    def _display_content(self, content: str) -> None:
+        container = self.query_one("#greatest-feed", VerticalScroll)
+        container.remove_children()
+        container.mount(Markdown(content))
+        self._set_status("today's greatest \u2014 press q to go back")
+
+    def _display_error(self, msg: str) -> None:
+        container = self.query_one("#greatest-feed", VerticalScroll)
+        container.remove_children()
+        container.mount(Static(f"[red]Failed to load today's greatest: {msg}[/red]"))
+        self._set_status("failed to load \u2014 press q to go back")
+
+    def action_refresh(self) -> None:
+        container = self.query_one("#greatest-feed", VerticalScroll)
+        container.remove_children()
+        self._set_status("fetching...")
+        self.fetch_greatest()
 
 
 class ArticleWidget(Static):
@@ -108,6 +250,7 @@ class WiredInTUI(App):
         Binding("k,up", "scroll_up", "Up", show=False),
         Binding("g", "scroll_top", "Top", show=False),
         Binding("G", "scroll_bottom", "Bottom", show=False),
+        Binding("t", "view_greatest", "Today's Greatest"),
     ]
 
     def compose(self) -> ComposeResult:
@@ -218,6 +361,9 @@ class WiredInTUI(App):
                 if link:
                     self.open_url(link)
                 return
+
+    def action_view_greatest(self) -> None:
+        self.push_screen(GreatestScreen())
 
     def action_ai_summary(self) -> None:
         if not self.articles:
