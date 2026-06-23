@@ -130,6 +130,39 @@ wiredIn --event bsides
 | `--export html` | export as styled HTML |
 | `--verbose` | full article summaries |
 
+## profile
+
+filter articles matching your skills & interests:
+
+```bash
+wiredIn --profile
+```
+
+by default reads from `~/vault/L_CACHES/event_hitlists/profile.md`. create it like:
+
+```markdown
+## Skills
+- reverse engineering
+- malware analysis
+- linux kernel
+- detection engineering
+
+## Interests
+- edr
+- ebpf
+- exploit development
+```
+
+it parses `## Skills` and `## Interests` sections, pulling every `- ` bullet as a keyword. matches are OR'd against article titles + summaries.
+
+custom path via flag or env:
+
+```bash
+wiredIn --profile ~/my_resume.md
+export WIREDIN_PROFILE=~/my_resume.md
+wiredIn --profile
+```
+
 ## security
 
 - XML parsing uses defusedxml (XXE/billion laughs protection)
