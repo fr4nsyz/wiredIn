@@ -1,114 +1,114 @@
 ========================================================================
   TODAY'S GREATEST — Cybersecurity Hits
-  Wednesday, June 24 2026  09:42 UTC
+  Wednesday, June 24 2026  14:46 UTC
 ========================================================================
 
 ── TOP VULNERABILITIES (with CVEs) ──
 
-  1. Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root
-     Source: The Hacker News  |  2h
+  1. Cisco Unified CM flaw actively exploited to drop webshells (CVE-2026-20230)
+     Source: Help Net Security  |  3h
+     CVEs:   CVE-2026-20230
+     Tags:   exploit, cve, ai, zeroday, vuln, hacktivism
+     Score:  73.5
+     Link:   https://www.helpnetsecurity.com/2026/06/24/cisco-unified-cm-flaw-exploited-to-drop-webshells-cve-2026-20230/
+
+  2. Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root
+     Source: The Hacker News  |  7h
      CVEs:   CVE-2026-20230
      Tags:   exploit, cve, vuln, network, hacktivism
-     Score:  51.0
+     Score:  48.1
      Link:   https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html
 
-  2. Hackers Exploiting Cisco Unified CM Vulnerability
-     Source: SecurityWeek  |  3h
+  3. Hackers Exploiting Cisco Unified CM Vulnerability
+     Source: SecurityWeek  |  9h
      CVEs:   CVE-2026-20230
      Tags:   exploit, cve, ai, vuln
-     Score:  49.5
+     Score:  46.8
      Link:   https://www.securityweek.com/hackers-exploiting-cisco-unified-cm-vulnerability/
 
-  3. Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks
-     Source: BleepingComputer  |  11h
+  4. Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks
+     Source: BleepingComputer  |  16h
      CVEs:   CVE-2026-20230
      Tags:   exploit, cve, vuln
-     Score:  40.3
+     Score:  44.2
      Link:   https://www.bleepingcomputer.com/news/security/cisco-unified-cm-sme-flaw-cve-2026-20230-now-exploited-in-attacks/
 
-  4. CVE-2024-40766: The Patch Fixed the Bug. Nobody Fixed the Configuration., (Tue, Jun 23rd)
+  5. CVE-2024-40766: The Patch Fixed the Bug. Nobody Fixed the Configuration., (Tue, Jun 23rd)
      Source: SANS ISC Diary  |  1d
      CVEs:   CVE-2024-40766
      Tags:   cve, vuln
      Score:  19.4
      Link:   https://isc.sans.edu/diary/rss/33094
 
-  5. Hackers Exploit Gravity SMTP WordPress Plugin Bug to Expose API Keys
-     Source: The Hacker News  |  3d
-     CVEs:   CVE-2026-4020
-     Tags:   exploit, cve, vuln
-     Score:  12.5
-     Link:   https://thehackernews.com/2026/06/hackers-exploit-gravity-smtp-wordpress.html
-
 ── TRENDING TOPICS ──
 
-  1. [The Hacker News] Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root
-     2h  |  Tags: exploit, cve, vuln, network, hacktivism
+  1. [Help Net Security] Cisco Unified CM flaw actively exploited to drop webshells (CVE-2026-20230)
+     3h  |  Tags: exploit, cve, ai, zeroday, vuln, hacktivism
+     CVEs: CVE-2026-20230
+     Link: https://www.helpnetsecurity.com/2026/06/24/cisco-unified-cm-flaw-exploited-to-drop-webshells-cve-2026-20230/
+
+  2. [The Hacker News] Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root
+     7h  |  Tags: exploit, cve, vuln, network, hacktivism
      CVEs: CVE-2026-20230
      Link: https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html
 
-  2. [SecurityWeek] Hackers Exploiting Cisco Unified CM Vulnerability
-     3h  |  Tags: exploit, cve, ai, vuln
+  3. [SecurityWeek] Hackers Exploiting Cisco Unified CM Vulnerability
+     9h  |  Tags: exploit, cve, ai, vuln
      CVEs: CVE-2026-20230
      Link: https://www.securityweek.com/hackers-exploiting-cisco-unified-cm-vulnerability/
 
-  3. [BleepingComputer] Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks
-     11h  |  Tags: exploit, cve, vuln
+  4. [BleepingComputer] Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks
+     16h  |  Tags: exploit, cve, vuln
      CVEs: CVE-2026-20230
      Link: https://www.bleepingcomputer.com/news/security/cisco-unified-cm-sme-flaw-cve-2026-20230-now-exploited-in-attacks/
 
-  4. [SANS ISC Diary] Linux Process Name Masquerading, (Wed, Jun 24th)
-     3h  |  Tags: kernel, exploit, malware, linux
+  5. [The Hacker News] Cordyceps CI/CD Flaws Expose 300+ GitHub Repositories to Supply-Chain Attacks
+     1h  |  Tags: exploit, supplychain, ai, vuln, cloud, windows, hacktivism
+     Link: https://thehackernews.com/2026/06/cordyceps-cicd-flaws-expose-300-github.html
+
+  6. [SecurityWeek] Exploitable CI/CD Vulnerabilities Expose Millions of Repositories to Hijacking
+     3h  |  Tags: exploit, supplychain, ai, vuln, hacktivism
+     Link: https://www.securityweek.com/exploitable-ci-cd-vulnerabilities-expose-millions-of-repositories-to-hijacking/
+
+  7. [SANS ISC Diary] Linux Process Name Masquerading, (Wed, Jun 24th)
+     8h  |  Tags: kernel, exploit, malware, linux
      Link: https://isc.sans.edu/diary/rss/33102
 
-  5. [BleepingComputer] LastPass confirms data breach in Klue supply chain attack
-     19h  |  Tags: supplychain, ai, breach, vuln
-     Link: https://www.bleepingcomputer.com/news/security/lastpass-confirms-data-breach-in-klue-supply-chain-attack/
+  8. [SecurityWeek] macOS Weaknesses Chained to Silently Disable Endpoint Security Agents
+     56m  |  Tags: edr, exploit, ai, macos
+     Link: https://www.securityweek.com/macos-weaknesses-chained-to-silently-disable-endpoint-security-agents/
 
-  6. [Unit 42] The Global Namespace Risk: Universal Bucket Hijacking Technique for Cloud Data Exfiltration
+  9. [Unit 42] The Global Namespace Risk: Universal Bucket Hijacking Technique for Cloud Data Exfiltration
      1d  |  Tags: exploit, supplychain, ai, crypto
      Link: https://unit42.paloaltonetworks.com/cloud-bucket-hijacking-risks/
 
-  7. [BleepingComputer] The Exploit Doesn't Exist. You Can Still Prove It Works Against You
-     19h  |  Tags: exploit, ai, vuln
-     Link: https://www.bleepingcomputer.com/news/security/the-exploit-doesnt-exist-you-can-still-prove-it-works-against-you/
+  10. [BleepingComputer] Amadey, StealC malware operations disrupted in Operation Endgame action
+     11m  |  Tags: ransomware, malware, windows, hacktivism
+     Link: https://www.bleepingcomputer.com/news/security/amadey-stealc-malware-operations-disrupted-in-operation-endgame-action/
 
-  8. [The Hacker News] ⚡ Weekly Recap: Browser Bugs, EDR Killers, TV Botnet, OpenBSD Flaw, Android Trojan, and More
-     1d  |  Tags: edr, ransomware, ai, malware, mobile, hacktivism
-     Link: https://thehackernews.com/2026/06/weekly-recap-browser-bugs-edr-killers.html
+  11. [Dark Reading] Apple's MacOS Gap Lets Users Disable Security Tools
+     2h  |  Tags: kernel, exploit, macos
+     Link: https://www.darkreading.com/application-security/apple-macos-security-gap-users-disable-security-tools
 
-  9. [The Hacker News] GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns
-     19h  |  Tags: exploit, supplychain, ai
-     Link: https://thehackernews.com/2026/06/github-updates-actionscheckout-to-block.html
+  12. [The Hacker News] Dawn of the Apex Agentic Adversary
+     3h  |  Tags: cve, ai, vuln, crypto
+     Link: https://thehackernews.com/2026/06/dawn-of-apex-agentic-adversary.html
 
-  10. [Unit 42] OpenClaw’s Skill Marketplace and the Emerging AI Supply Chain Threat
-     11h  |  Tags: supplychain, ai, malware, hacktivism
+  13. [BleepingComputer] LastPass confirms data breach in Klue supply chain attack
+     1d  |  Tags: supplychain, ai, breach, vuln
+     Link: https://www.bleepingcomputer.com/news/security/lastpass-confirms-data-breach-in-klue-supply-chain-attack/
+
+  14. [Unit 42] OpenClaw’s Skill Marketplace and the Emerging AI Supply Chain Threat
+     16h  |  Tags: supplychain, ai, malware, hacktivism
      Link: https://unit42.paloaltonetworks.com/openclaw-ai-supply-chain-risk/
 
-  11. [BleepingComputer] FFmpeg fixes PixelSmash flaw in widely used video decoder
-     1d  |  Tags: exploit, ai, vuln, hacktivism
-     Link: https://www.bleepingcomputer.com/news/security/ffmpeg-fixes-pixelsmash-flaw-in-widely-used-video-decoder/
-
-  12. [SANS ISC Diary] CVE-2024-40766: The Patch Fixed the Bug. Nobody Fixed the Configuration., (Tue, Jun 23rd)
-     1d  |  Tags: cve, vuln
-     CVEs: CVE-2024-40766
-     Link: https://isc.sans.edu/diary/rss/33094
-
-  13. [SecurityWeek] Webinar Today: Modern Exposure Validation in the AI Era
-     1h  |  Tags: exploit, ai
-     Link: https://www.securityweek.com/webinar-today-modern-exposure-validation-in-the-ai-era/
-
-  14. [Help Net Security] Where IT meets OT and railway cybersecurity gets harder
-     3h  |  Tags: ai, vuln, network, hacktivism
-     Link: https://www.helpnetsecurity.com/2026/06/24/jorge-aldegunde-dnv-railway-cybersecurity/
-
-  15. [Help Net Security] Praxen: Open-source AI agent behavior verification
-     4h  |  Tags: ai, vuln, hacktivism
-     Link: https://www.helpnetsecurity.com/2026/06/24/praxen-open-source-ai-agent-behavior-verification/
+  15. [SecurityWeek] New ‘Mistic’ RAT Opens Door to Several Ransomware Families
+     3h  |  Tags: ransomware, malware, hacktivism
+     Link: https://www.securityweek.com/new-mistic-rat-opens-door-to-several-ransomware-families/
 
 ── CROSS-SOURCE HEAT MAP ──
 
-  CVE-2026-20230 — covered by 3 sources: The Hacker News, BleepingComputer, SecurityWeek
+  CVE-2026-20230 — covered by 4 sources: Help Net Security, BleepingComputer, The Hacker News, SecurityWeek
 
 ========================================================================
   Generated by wiredIn · today's greatest
