@@ -1,91 +1,114 @@
 ========================================================================
   TODAY'S GREATEST — Cybersecurity Hits
-  Monday, June 22 2026  23:09 UTC
+  Wednesday, June 24 2026  09:42 UTC
 ========================================================================
 
 ── TOP VULNERABILITIES (with CVEs) ──
 
-  1. Hackers Exploit Gravity SMTP WordPress Plugin Bug to Expose API Keys
-     Source: The Hacker News  |  2d
+  1. Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root
+     Source: The Hacker News  |  2h
+     CVEs:   CVE-2026-20230
+     Tags:   exploit, cve, vuln, network, hacktivism
+     Score:  51.0
+     Link:   https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html
+
+  2. Hackers Exploiting Cisco Unified CM Vulnerability
+     Source: SecurityWeek  |  3h
+     CVEs:   CVE-2026-20230
+     Tags:   exploit, cve, ai, vuln
+     Score:  49.5
+     Link:   https://www.securityweek.com/hackers-exploiting-cisco-unified-cm-vulnerability/
+
+  3. Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks
+     Source: BleepingComputer  |  11h
+     CVEs:   CVE-2026-20230
+     Tags:   exploit, cve, vuln
+     Score:  40.3
+     Link:   https://www.bleepingcomputer.com/news/security/cisco-unified-cm-sme-flaw-cve-2026-20230-now-exploited-in-attacks/
+
+  4. CVE-2024-40766: The Patch Fixed the Bug. Nobody Fixed the Configuration., (Tue, Jun 23rd)
+     Source: SANS ISC Diary  |  1d
+     CVEs:   CVE-2024-40766
+     Tags:   cve, vuln
+     Score:  19.4
+     Link:   https://isc.sans.edu/diary/rss/33094
+
+  5. Hackers Exploit Gravity SMTP WordPress Plugin Bug to Expose API Keys
+     Source: The Hacker News  |  3d
      CVEs:   CVE-2026-4020
      Tags:   exploit, cve, vuln
-     Score:  22.5
+     Score:  12.5
      Link:   https://thehackernews.com/2026/06/hackers-exploit-gravity-smtp-wordpress.html
-
-  2. Apple Patches Beats Studio Buds Flaw Letting Nearby Attackers Spy via Microphone
-     Source: The Hacker News  |  3d
-     CVEs:   CVE-2025-20701
-     Tags:   exploit, cve, ai, vuln, macos, hacktivism
-     Score:  15.5
-     Link:   https://thehackernews.com/2026/06/apple-patches-beats-studio-buds-flaw.html
 
 ── TRENDING TOPICS ──
 
-  1. [Unit 42] The Global Namespace Risk: Universal Bucket Hijacking Technique for Cloud Data Exfiltration
-     1h  |  Tags: exploit, supplychain, ai, crypto
+  1. [The Hacker News] Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root
+     2h  |  Tags: exploit, cve, vuln, network, hacktivism
+     CVEs: CVE-2026-20230
+     Link: https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html
+
+  2. [SecurityWeek] Hackers Exploiting Cisco Unified CM Vulnerability
+     3h  |  Tags: exploit, cve, ai, vuln
+     CVEs: CVE-2026-20230
+     Link: https://www.securityweek.com/hackers-exploiting-cisco-unified-cm-vulnerability/
+
+  3. [BleepingComputer] Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks
+     11h  |  Tags: exploit, cve, vuln
+     CVEs: CVE-2026-20230
+     Link: https://www.bleepingcomputer.com/news/security/cisco-unified-cm-sme-flaw-cve-2026-20230-now-exploited-in-attacks/
+
+  4. [SANS ISC Diary] Linux Process Name Masquerading, (Wed, Jun 24th)
+     3h  |  Tags: kernel, exploit, malware, linux
+     Link: https://isc.sans.edu/diary/rss/33102
+
+  5. [BleepingComputer] LastPass confirms data breach in Klue supply chain attack
+     19h  |  Tags: supplychain, ai, breach, vuln
+     Link: https://www.bleepingcomputer.com/news/security/lastpass-confirms-data-breach-in-klue-supply-chain-attack/
+
+  6. [Unit 42] The Global Namespace Risk: Universal Bucket Hijacking Technique for Cloud Data Exfiltration
+     1d  |  Tags: exploit, supplychain, ai, crypto
      Link: https://unit42.paloaltonetworks.com/cloud-bucket-hijacking-risks/
 
-  2. [Help Net Security] Hundreds of AI-powered iOS apps found exposing credentials
-     19h  |  Tags: exploit, ai, vuln, network, macos, mobile, hacktivism
-     Link: https://www.helpnetsecurity.com/2026/06/22/llm-api-credential-leakage-ios-apps/
+  7. [BleepingComputer] The Exploit Doesn't Exist. You Can Still Prove It Works Against You
+     19h  |  Tags: exploit, ai, vuln
+     Link: https://www.bleepingcomputer.com/news/security/the-exploit-doesnt-exist-you-can-still-prove-it-works-against-you/
 
-  3. [SecurityWeek] What the Latest ShinyHunters Breaches Reveal About Modern Cyberattacks
-     12h  |  Tags: exploit, zeroday, malware
-     Link: https://www.securityweek.com/what-the-latest-shinyhunters-breaches-reveal-about-modern-cyberattacks/
-
-  4. [BleepingComputer] FFmpeg fixes PixelSmash flaw in widely used video decoder
-     2h  |  Tags: exploit, ai, vuln, hacktivism
-     Link: https://www.bleepingcomputer.com/news/security/ffmpeg-fixes-pixelsmash-flaw-in-widely-used-video-decoder/
-
-  5. [The Hacker News] ⚡ Weekly Recap: Browser Bugs, EDR Killers, TV Botnet, OpenBSD Flaw, Android Trojan, and More
-     12h  |  Tags: edr, ransomware, ai, malware, mobile, hacktivism
+  8. [The Hacker News] ⚡ Weekly Recap: Browser Bugs, EDR Killers, TV Botnet, OpenBSD Flaw, Android Trojan, and More
+     1d  |  Tags: edr, ransomware, ai, malware, mobile, hacktivism
      Link: https://thehackernews.com/2026/06/weekly-recap-browser-bugs-edr-killers.html
 
-  6. [SecurityWeek] New Exploit Bypasses Apple’s Boot Defenses, Affects Millions of iPhones
-     13h  |  Tags: exploit, vuln, macos
-     Link: https://www.securityweek.com/new-exploit-bypasses-apples-boot-defenses-affects-millions-of-iphones/
+  9. [The Hacker News] GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns
+     19h  |  Tags: exploit, supplychain, ai
+     Link: https://thehackernews.com/2026/06/github-updates-actionscheckout-to-block.html
 
-  7. [The Hacker News] Hackers Exploit Gravity SMTP WordPress Plugin Bug to Expose API Keys
-     2d  |  Tags: exploit, cve, vuln
-     CVEs: CVE-2026-4020
-     Link: https://thehackernews.com/2026/06/hackers-exploit-gravity-smtp-wordpress.html
+  10. [Unit 42] OpenClaw’s Skill Marketplace and the Emerging AI Supply Chain Threat
+     11h  |  Tags: supplychain, ai, malware, hacktivism
+     Link: https://unit42.paloaltonetworks.com/openclaw-ai-supply-chain-risk/
 
-  8. [Help Net Security] Week in review: 74k Fortinet firewall credentials stolen, Splunk Enterprise RCE under active attack
-     1d  |  Tags: supplychain, ai, vuln, network, hacktivism
-     Link: https://www.helpnetsecurity.com/2026/06/21/week-in-review-74k-fortinet-firewall-credentials-stolen-splunk-enterprise-rce-under-active-attack/
+  11. [BleepingComputer] FFmpeg fixes PixelSmash flaw in widely used video decoder
+     1d  |  Tags: exploit, ai, vuln, hacktivism
+     Link: https://www.bleepingcomputer.com/news/security/ffmpeg-fixes-pixelsmash-flaw-in-widely-used-video-decoder/
 
-  9. [The Hacker News] INTERPOL Warns Phishing, Ransomware, and AI Scams Are Rising Across Asia-Pacific
-     17h  |  Tags: ransomware, ai, phishing, network
-     Link: https://thehackernews.com/2026/06/interpol-warns-phishing-ransomware-and.html
+  12. [SANS ISC Diary] CVE-2024-40766: The Patch Fixed the Bug. Nobody Fixed the Configuration., (Tue, Jun 23rd)
+     1d  |  Tags: cve, vuln
+     CVEs: CVE-2024-40766
+     Link: https://isc.sans.edu/diary/rss/33094
 
-  10. [Cloudflare Blog] How we found a bug in the hyper HTTP library
-     5h  |  Tags: vuln, network, hacktivism
-     Link: https://blog.cloudflare.com/hyper-bug/
+  13. [SecurityWeek] Webinar Today: Modern Exposure Validation in the AI Era
+     1h  |  Tags: exploit, ai
+     Link: https://www.securityweek.com/webinar-today-modern-exposure-validation-in-the-ai-era/
 
-  11. [SecurityWeek] North Korean Hackers Blamed for Mastra NPM Supply Chain Attack
-     11h  |  Tags: supplychain, ai, apt, blockchain
-     Link: https://www.securityweek.com/north-korean-hackers-blamed-for-mastra-npm-supply-chain-attack/
+  14. [Help Net Security] Where IT meets OT and railway cybersecurity gets harder
+     3h  |  Tags: ai, vuln, network, hacktivism
+     Link: https://www.helpnetsecurity.com/2026/06/24/jorge-aldegunde-dnv-railway-cybersecurity/
 
-  12. [BleepingComputer] Microsoft fixes AutoGen Studio flaw that enabled code execution
-     5h  |  Tags: ai, vuln, windows
-     Link: https://www.bleepingcomputer.com/news/security/microsoft-fixes-autogen-studio-flaw-that-enabled-code-execution/
-
-  13. [Help Net Security] 23 ClawHub plugins squatting official scopes expose AI registry security gaps
-     15h  |  Tags: supplychain, ai, iot, crypto, mobile, hacktivism
-     Link: https://www.helpnetsecurity.com/2026/06/22/clawhub-code-executing-plugins-video/
-
-  14. [The Hacker News] Apple Patches Beats Studio Buds Flaw Letting Nearby Attackers Spy via Microphone
-     3d  |  Tags: exploit, cve, ai, vuln, macos, hacktivism
-     CVEs: CVE-2025-20701
-     Link: https://thehackernews.com/2026/06/apple-patches-beats-studio-buds-flaw.html
-
-  15. [Check Point Research] 22nd June – Threat Intelligence Report
-     7h  |  Tags: ai, breach, hacktivism
-     Link: https://research.checkpoint.com/2026/22nd-june-threat-intelligence-report/
+  15. [Help Net Security] Praxen: Open-source AI agent behavior verification
+     4h  |  Tags: ai, vuln, hacktivism
+     Link: https://www.helpnetsecurity.com/2026/06/24/praxen-open-source-ai-agent-behavior-verification/
 
 ── CROSS-SOURCE HEAT MAP ──
 
-  (No CVE covered by multiple sources today)
+  CVE-2026-20230 — covered by 3 sources: The Hacker News, BleepingComputer, SecurityWeek
 
 ========================================================================
   Generated by wiredIn · today's greatest
