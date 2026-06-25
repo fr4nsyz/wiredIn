@@ -1,46 +1,53 @@
 ========================================================================
   TODAY'S GREATEST — Cybersecurity Hits
-  Thursday, June 25 2026  04:10 UTC
+  Thursday, June 25 2026  09:35 UTC
 ========================================================================
 
 ── TOP VULNERABILITIES (with CVEs) ──
 
-  1. Cisco Unified CM flaw actively exploited to drop webshells (CVE-2026-20230)
-     Source: Help Net Security  |  16h
-     CVEs:   CVE-2026-20230
-     Tags:   exploit, cve, ai, zeroday, vuln, hacktivism
-     Score:  60.2
-     Link:   https://www.helpnetsecurity.com/2026/06/24/cisco-unified-cm-flaw-exploited-to-drop-webshells-cve-2026-20230/
+  1. Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to Gain Root Access
+     Source: The Hacker News  |  3h
+     CVEs:   CVE-2026-20245
+     Tags:   exploit, cve, ai, zeroday, vuln
+     Score:  67.5
+     Link:   https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html
 
-  2. CISA Warns Critical Lantronix EDS5000 Flaw Is Being Actively Exploited
-     Source: The Hacker News  |  10h
+  2. Cisco SD-WAN Zero-Day Exploited Months Before Patching
+     Source: SecurityWeek  |  3h
+     CVEs:   CVE-2026-20245
+     Tags:   exploit, cve, zeroday, vuln
+     Score:  64.5
+     Link:   https://www.securityweek.com/cisco-sd-wan-zero-day-exploited-months-before-patching/
+
+  3. Mandiant reveals how Cisco SD-WAN zero-day attacks gained root access
+     Source: BleepingComputer  |  12h
+     CVEs:   CVE-2026-20245
+     Tags:   exploit, cve, ai, zeroday, vuln
+     Score:  58.9
+     Link:   https://www.bleepingcomputer.com/news/security/mandiant-reveals-how-cisco-sd-wan-zero-day-attacks-gained-root-access/
+
+  4. CISA Warns Critical Lantronix EDS5000 Flaw Is Being Actively Exploited
+     Source: The Hacker News  |  16h
      CVEs:   CVE-2025-67038
      Tags:   exploit, cve, zeroday, vuln
      Score:  51.5
      Link:   https://thehackernews.com/2026/06/cisa-warns-critical-lantronix-eds5000.html
 
-  3. Mandiant reveals how Cisco SD-WAN zero-day attacks gained root access
-     Source: BleepingComputer  |  6h
-     CVEs:   CVE-2026-20245
-     Tags:   exploit, cve, ai, zeroday, vuln
-     Score:  51.1
-     Link:   https://www.bleepingcomputer.com/news/security/mandiant-reveals-how-cisco-sd-wan-zero-day-attacks-gained-root-access/
-
-  4. Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root
-     Source: The Hacker News  |  21h
+  5. Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root
+     Source: The Hacker News  |  1d
      CVEs:   CVE-2026-20230
      Tags:   exploit, cve, vuln, network, hacktivism
-     Score:  44.2
+     Score:  34.1
      Link:   https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html
 
-  5. Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks
+  6. Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks
      Source: BleepingComputer  |  1d
      CVEs:   CVE-2026-20230
      Tags:   exploit, cve, vuln
-     Score:  34.1
+     Score:  30.8
      Link:   https://www.bleepingcomputer.com/news/security/cisco-unified-cm-sme-flaw-cve-2026-20230-now-exploited-in-attacks/
 
-  6. CVE-2024-40766: The Patch Fixed the Bug. Nobody Fixed the Configuration., (Tue, Jun 23rd)
+  7. CVE-2024-40766: The Patch Fixed the Bug. Nobody Fixed the Configuration., (Tue, Jun 23rd)
      Source: SANS ISC Diary  |  2d
      CVEs:   CVE-2024-40766
      Tags:   cve, vuln
@@ -49,74 +56,77 @@
 
 ── TRENDING TOPICS ──
 
-  1. [Help Net Security] Cisco Unified CM flaw actively exploited to drop webshells (CVE-2026-20230)
-     16h  |  Tags: exploit, cve, ai, zeroday, vuln, hacktivism
-     CVEs: CVE-2026-20230
-     Link: https://www.helpnetsecurity.com/2026/06/24/cisco-unified-cm-flaw-exploited-to-drop-webshells-cve-2026-20230/
+  1. [The Hacker News] Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to Gain Root Access
+     3h  |  Tags: exploit, cve, ai, zeroday, vuln
+     CVEs: CVE-2026-20245
+     Link: https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html
 
-  2. [The Hacker News] CISA Warns Critical Lantronix EDS5000 Flaw Is Being Actively Exploited
-     10h  |  Tags: exploit, cve, zeroday, vuln
-     CVEs: CVE-2025-67038
-     Link: https://thehackernews.com/2026/06/cisa-warns-critical-lantronix-eds5000.html
+  2. [SecurityWeek] Cisco SD-WAN Zero-Day Exploited Months Before Patching
+     3h  |  Tags: exploit, cve, zeroday, vuln
+     CVEs: CVE-2026-20245
+     Link: https://www.securityweek.com/cisco-sd-wan-zero-day-exploited-months-before-patching/
 
   3. [BleepingComputer] Mandiant reveals how Cisco SD-WAN zero-day attacks gained root access
-     6h  |  Tags: exploit, cve, ai, zeroday, vuln
+     12h  |  Tags: exploit, cve, ai, zeroday, vuln
      CVEs: CVE-2026-20245
      Link: https://www.bleepingcomputer.com/news/security/mandiant-reveals-how-cisco-sd-wan-zero-day-attacks-gained-root-access/
 
-  4. [The Hacker News] Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root
-     21h  |  Tags: exploit, cve, vuln, network, hacktivism
+  4. [The Hacker News] CISA Warns Critical Lantronix EDS5000 Flaw Is Being Actively Exploited
+     16h  |  Tags: exploit, cve, zeroday, vuln
+     CVEs: CVE-2025-67038
+     Link: https://thehackernews.com/2026/06/cisa-warns-critical-lantronix-eds5000.html
+
+  5. [The Hacker News] Cordyceps CI/CD Flaws Expose 300+ GitHub Repositories to Supply-Chain Attacks
+     20h  |  Tags: exploit, supplychain, ai, vuln, cloud, windows, hacktivism
+     Link: https://thehackernews.com/2026/06/cordyceps-cicd-flaws-expose-300-github.html
+
+  6. [The Hacker News] Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root
+     1d  |  Tags: exploit, cve, vuln, network, hacktivism
      CVEs: CVE-2026-20230
      Link: https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html
 
-  5. [Help Net Security] Law enforcement hits StealC and Amadey malware networks
-     13h  |  Tags: ransomware, ai, malware, vuln, network, windows, hacktivism
-     Link: https://www.helpnetsecurity.com/2026/06/24/operation-endgame-stealc-amadey-malware-disrupted/
+  7. [The Hacker News] Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered
+     17h  |  Tags: ransomware, ai, malware, vuln, network, windows, hacktivism
+     Link: https://thehackernews.com/2026/06/amadey-and-stealc-malware-network.html
 
-  6. [The Hacker News] Cordyceps CI/CD Flaws Expose 300+ GitHub Repositories to Supply-Chain Attacks
-     15h  |  Tags: exploit, supplychain, ai, vuln, cloud, windows, hacktivism
-     Link: https://thehackernews.com/2026/06/cordyceps-cicd-flaws-expose-300-github.html
-
-  7. [BleepingComputer] Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks
+  8. [BleepingComputer] Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks
      1d  |  Tags: exploit, cve, vuln
      CVEs: CVE-2026-20230
      Link: https://www.bleepingcomputer.com/news/security/cisco-unified-cm-sme-flaw-cve-2026-20230-now-exploited-in-attacks/
 
-  8. [The Hacker News] Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered
-     12h  |  Tags: ransomware, ai, malware, vuln, network, windows, hacktivism
-     Link: https://thehackernews.com/2026/06/amadey-and-stealc-malware-network.html
-
   9. [The Record] Three ‘cybercrime as a service’ operations undercut by Microsoft, law enforcement
-     8h  |  Tags: supplychain, ai, malware, vuln, windows, hacktivism
+     13h  |  Tags: supplychain, ai, malware, vuln, windows, hacktivism
      Link: https://therecord.media/stealc-amadey-socgholish-malware-takedown-europol-microsoft
 
-  10. [SecurityWeek] Exploitable CI/CD Vulnerabilities Expose Millions of Repositories to Hijacking
-     17h  |  Tags: exploit, supplychain, ai, vuln, hacktivism
-     Link: https://www.securityweek.com/exploitable-ci-cd-vulnerabilities-expose-millions-of-repositories-to-hijacking/
-
-  11. [SANS ISC Diary] Linux Process Name Masquerading, (Wed, Jun 24th)
-     21h  |  Tags: kernel, exploit, malware, linux
-     Link: https://isc.sans.edu/diary/rss/33102
-
-  12. [BleepingComputer] Malicious Edge extension abuses Native Messaging as bridge to malware
-     7h  |  Tags: ransomware, supplychain, malware, windows
+  10. [BleepingComputer] Malicious Edge extension abuses Native Messaging as bridge to malware
+     12h  |  Tags: ransomware, supplychain, malware, windows
      Link: https://www.bleepingcomputer.com/news/security/malicious-edge-extension-abuses-native-messaging-as-bridge-to-malware/
 
+  11. [Help Net Security] Seemplicity AI Analysts focus remediation on exploitable risks
+     8m  |  Tags: exploit, ai, vuln
+     Link: https://www.helpnetsecurity.com/2026/06/25/seemplicity-ai-analysts-focus-remediation-on-exploitable-risks/
+
+  12. [SANS ISC Diary] Linux Process Name Masquerading, (Wed, Jun 24th)
+     1d  |  Tags: kernel, exploit, malware, linux
+     Link: https://isc.sans.edu/diary/rss/33102
+
   13. [SecurityWeek] macOS Weaknesses Chained to Silently Disable Endpoint Security Agents
-     14h  |  Tags: edr, exploit, ai, macos
+     19h  |  Tags: edr, exploit, ai, macos
      Link: https://www.securityweek.com/macos-weaknesses-chained-to-silently-disable-endpoint-security-agents/
 
-  14. [BleepingComputer] Amadey, StealC malware operations disrupted in Operation Endgame action
-     13h  |  Tags: ransomware, malware, windows, hacktivism
-     Link: https://www.bleepingcomputer.com/news/security/amadey-stealc-malware-operations-disrupted-in-operation-endgame-action/
+  14. [Help Net Security] YesWeHack automates penetration testing with AI-powered agents
+     28m  |  Tags: exploit, ai, crypto, mobile, hacktivism
+     Link: https://www.helpnetsecurity.com/2026/06/25/yeswehack-automates-penetration-testing-with-ai-powered-agents/
 
-  15. [Dark Reading] Apple's MacOS Gap Lets Users Disable Security Tools
-     16h  |  Tags: kernel, exploit, macos
-     Link: https://www.darkreading.com/application-security/apple-macos-security-gap-users-disable-security-tools
+  15. [BleepingComputer] Amadey, StealC malware operations disrupted in Operation Endgame action
+     19h  |  Tags: ransomware, malware, windows, hacktivism
+     Link: https://www.bleepingcomputer.com/news/security/amadey-stealc-malware-operations-disrupted-in-operation-endgame-action/
 
 ── CROSS-SOURCE HEAT MAP ──
 
-  CVE-2026-20230 — covered by 3 sources: BleepingComputer, Help Net Security, The Hacker News
+  CVE-2026-20245 — covered by 3 sources: SecurityWeek, The Hacker News, BleepingComputer
+
+  CVE-2026-20230 — covered by 2 sources: The Hacker News, BleepingComputer
 
 ========================================================================
   Generated by wiredIn · today's greatest
