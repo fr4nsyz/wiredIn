@@ -1,7 +1,7 @@
 # Today's Greatest — Cybersecurity Hits
 
-> Auto-generated on Saturday, June 27 2026 at 04:04 UTC
-> From 145 articles across 27 security feeds
+> Auto-generated on Saturday, June 27 2026 at 08:45 UTC
+> From 147 articles across 27 security feeds
 
 ---
 
@@ -10,15 +10,15 @@
 | # | Vulnerability | Source | CVEs | Score |
 |---|-------------|--------|------|-------|
 | 1 | New DirtyClone Linux Kernel Flaw Lets Local Users Gain Root ... | The Hacker News | `CVE-2026-43503` | 46.8 |
-| 2 | First-Ever Exploitation of PTC Windchill Vulnerability Disco... | SecurityWeek | `CVE-2026-12569` | 45.5 |
-| 3 | Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to G... | The Hacker News | `CVE-2026-20245` | 43.7 |
-| 4 | New Linux pedit COW Exploit Enables Root Access by Poisoning... | The Hacker News | `CVE-2026-46331` | 37.7 |
-| 5 | CISA Warns Critical Lantronix EDS5000 Flaw Is Being Actively... | The Hacker News | `CVE-2025-67038` | 37.5 |
+| 2 | First-Ever Exploitation of PTC Windchill Vulnerability Disco... | SecurityWeek | `CVE-2026-12569` | 38.5 |
+| 3 | New Linux pedit COW Exploit Enables Root Access by Poisoning... | The Hacker News | `CVE-2026-46331` | 37.7 |
+| 4 | CISA Warns Critical Lantronix EDS5000 Flaw Is Being Actively... | The Hacker News | `CVE-2025-67038` | 37.5 |
+| 5 | Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to G... | The Hacker News | `CVE-2026-20245` | 36.3 |
 | 6 | Synology issues critical fix for MailPlus Server vulnerabili... | Help Net Security | `CVE-2026-13136, CVE-2026-13135` | 32.9 |
-| 7 | Cisco Unified CM Flaw Exploited After PoC Reveals File-Write... | The Hacker News | `CVE-2026-20230` | 25.2 |
-| 8 | Amazon Q Developer Flaw Could Let Malicious Repos Run Code v... | The Hacker News | `CVE-2026-12957` | 24.7 |
-| 9 | USN-8472-1: containerd vulnerabilities | Ubuntu Security | `CVE-2026-47262, CVE-2026-33814` | 19.4 |
-| 10 | USN-8473-1: containerd vulnerabilities | Ubuntu Security | `CVE-2026-47262, CVE-2026-33814` | 19.4 |
+| 7 | Amazon Q Developer Flaw Could Let Malicious Repos Run Code v... | The Hacker News | `CVE-2026-12957` | 24.7 |
+| 8 | USN-8472-1: containerd vulnerabilities | Ubuntu Security | `CVE-2026-33814, CVE-2026-47262` | 19.4 |
+| 9 | USN-8473-1: containerd vulnerabilities | Ubuntu Security | `CVE-2026-33814, CVE-2026-47262` | 19.4 |
+| 10 | USN-8475-1: AMD Microcode vulnerabilities | Ubuntu Security | `CVE-2024-36357, CVE-2024-36350` | 18.5 |
 
 ---
 
@@ -29,7 +29,7 @@
 | | |
 |---|---|
 | **Source** | The Hacker News |
-| **When** | 16h |
+| **When** | 20h |
 | **Tags** | kernel, exploit, cve, ai, vuln, network, linux |
 | **CVEs** | `CVE-2026-43503` |
 | **Score** | 46.8 |
@@ -40,35 +40,24 @@
 | | |
 |---|---|
 | **Source** | SecurityWeek |
-| **When** | 19h |
+| **When** | 1d |
 | **Tags** | exploit, cve, zeroday, vuln |
 | **CVEs** | `CVE-2026-12569` |
-| **Score** | 45.5 |
+| **Score** | 38.5 |
 | **Link** | [https://www.securityweek.com/first-ever-exploitation-of-ptc-windchill-vulnerability-discovered-in-the-wild/](https://www.securityweek.com/first-ever-exploitation-of-ptc-windchill-vulnerability-discovered-in-the-wild/) |
 
-### 3. Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to Gain Root Access
+### 3. New Linux pedit COW Exploit Enables Root Access by Poisoning Cached Binaries
 
 | | |
 |---|---|
 | **Source** | The Hacker News |
-| **When** | 1d |
-| **Tags** | exploit, cve, ai, zeroday, vuln |
-| **CVEs** | `CVE-2026-20245` |
-| **Score** | 43.7 |
-| **Link** | [https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html](https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html) |
-
-### 4. New Linux pedit COW Exploit Enables Root Access by Poisoning Cached Binaries
-
-| | |
-|---|---|
-| **Source** | The Hacker News |
-| **When** | 14h |
+| **When** | 18h |
 | **Tags** | kernel, exploit, cve, ai, crypto, linux |
 | **CVEs** | `CVE-2026-46331` |
 | **Score** | 37.7 |
 | **Link** | [https://thehackernews.com/2026/06/new-linux-pedit-cow-exploit-enables.html](https://thehackernews.com/2026/06/new-linux-pedit-cow-exploit-enables.html) |
 
-### 5. CISA Warns Critical Lantronix EDS5000 Flaw Is Being Actively Exploited
+### 4. CISA Warns Critical Lantronix EDS5000 Flaw Is Being Actively Exploited
 
 | | |
 |---|---|
@@ -79,12 +68,23 @@
 | **Score** | 37.5 |
 | **Link** | [https://thehackernews.com/2026/06/cisa-warns-critical-lantronix-eds5000.html](https://thehackernews.com/2026/06/cisa-warns-critical-lantronix-eds5000.html) |
 
+### 5. Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to Gain Root Access
+
+| | |
+|---|---|
+| **Source** | The Hacker News |
+| **When** | 2d |
+| **Tags** | exploit, cve, ai, zeroday, vuln |
+| **CVEs** | `CVE-2026-20245` |
+| **Score** | 36.3 |
+| **Link** | [https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html](https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html) |
+
 ### 6. Critical open-source projects get a new security framework
 
 | | |
 |---|---|
 | **Source** | Help Net Security |
-| **When** | 16h |
+| **When** | 21h |
 | **Tags** | exploit, ai, vuln, linux, hacktivism |
 | **Score** | 33.3 |
 | **Link** | [https://www.helpnetsecurity.com/2026/06/26/akrites-open-source-security-framework/](https://www.helpnetsecurity.com/2026/06/26/akrites-open-source-security-framework/) |
@@ -94,7 +94,7 @@
 | | |
 |---|---|
 | **Source** | Help Net Security |
-| **When** | 17h |
+| **When** | 21h |
 | **Tags** | cve, supplychain, ai, cloud, hacktivism |
 | **CVEs** | `CVE-2026-13136, CVE-2026-13135` |
 | **Score** | 32.9 |
@@ -105,7 +105,7 @@
 | | |
 |---|---|
 | **Source** | BleepingComputer |
-| **When** | 8h |
+| **When** | 13h |
 | **Tags** | exploit, zeroday, vuln |
 | **Score** | 32.5 |
 | **Link** | [https://www.bleepingcomputer.com/news/security/cisa-sets-urgent-deadline-to-fix-cisco-flaw-exploited-in-attacks/](https://www.bleepingcomputer.com/news/security/cisa-sets-urgent-deadline-to-fix-cisco-flaw-exploited-in-attacks/) |
@@ -115,7 +115,7 @@
 | | |
 |---|---|
 | **Source** | Help Net Security |
-| **When** | 18h |
+| **When** | 22h |
 | **Tags** | ransomware, supplychain, ai, phishing, vuln, hacktivism |
 | **Score** | 31.2 |
 | **Link** | [https://www.helpnetsecurity.com/2026/06/26/black-kite-european-cyber-threats-report/](https://www.helpnetsecurity.com/2026/06/26/black-kite-european-cyber-threats-report/) |
@@ -125,7 +125,7 @@
 | | |
 |---|---|
 | **Source** | SentinelOne |
-| **When** | 15h |
+| **When** | 19h |
 | **Tags** | exploit, ai, cloud, macos, hacktivism |
 | **Score** | 28.7 |
 | **Link** | [https://www.sentinelone.com/blog/the-good-the-bad-and-the-ugly-in-cybersecurity-week-26-7/](https://www.sentinelone.com/blog/the-good-the-bad-and-the-ugly-in-cybersecurity-week-26-7/) |
@@ -140,29 +140,18 @@
 | **Score** | 25.2 |
 | **Link** | [https://thehackernews.com/2026/06/cordyceps-cicd-flaws-expose-300-github.html](https://thehackernews.com/2026/06/cordyceps-cicd-flaws-expose-300-github.html) |
 
-### 12. Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root
+### 12. Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs
 
 | | |
 |---|---|
 | **Source** | The Hacker News |
-| **When** | 2d |
-| **Tags** | exploit, cve, vuln, network, hacktivism |
-| **CVEs** | `CVE-2026-20230` |
-| **Score** | 25.2 |
-| **Link** | [https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html](https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html) |
-
-### 13. Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs
-
-| | |
-|---|---|
-| **Source** | The Hacker News |
-| **When** | 14h |
+| **When** | 18h |
 | **Tags** | cve, ai, vuln, hacktivism |
 | **CVEs** | `CVE-2026-12957` |
 | **Score** | 24.7 |
 | **Link** | [https://thehackernews.com/2026/06/amazon-q-developer-flaw-could-let.html](https://thehackernews.com/2026/06/amazon-q-developer-flaw-could-let.html) |
 
-### 14. Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered
+### 13. Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered
 
 | | |
 |---|---|
@@ -172,15 +161,25 @@
 | **Score** | 23.4 |
 | **Link** | [https://thehackernews.com/2026/06/amadey-and-stealc-malware-network.html](https://thehackernews.com/2026/06/amadey-and-stealc-malware-network.html) |
 
-### 15. CISA Adds Exploited PTC Windchill RCE Flaw to KEV as Web Shell Attacks Continue
+### 14. CISA Adds Exploited PTC Windchill RCE Flaw to KEV as Web Shell Attacks Continue
 
 | | |
 |---|---|
 | **Source** | The Hacker News |
-| **When** | 15h |
+| **When** | 20h |
 | **Tags** | exploit, vuln |
 | **Score** | 22.5 |
 | **Link** | [https://thehackernews.com/2026/06/cisa-adds-exploited-ptc-windchill-rce.html](https://thehackernews.com/2026/06/cisa-adds-exploited-ptc-windchill-rce.html) |
+
+### 15. The "Akrites" vulnerability-mitigation project launches
+
+| | |
+|---|---|
+| **Source** | LWN Kernel Security |
+| **When** | 19h |
+| **Tags** | exploit, ai, vuln, crypto, linux, hacktivism |
+| **Score** | 20.0 |
+| **Link** | [https://lwn.net/Articles/1079657/](https://lwn.net/Articles/1079657/) |
 
 ---
 
@@ -190,4 +189,4 @@ _No CVE is covered by multiple sources today._
 
 ---
 
-*Generated by [wiredIn](https://github.com/anomalyco/wiredIn) · 145 articles from 27 feeds*
+*Generated by [wiredIn](https://github.com/anomalyco/wiredIn) · 147 articles from 27 feeds*
