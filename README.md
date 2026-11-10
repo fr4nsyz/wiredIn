@@ -1,5 +1,20 @@
 # wiredIn
 
+## paper feed (web)
+
+New papers from USENIX Security, OSDI, CCS and arXiv (cs.CR, cs.OS, cs.DC, cs.AR, plus a keyword query), filterable by keyword in the browser.
+
+```bash
+./start.sh            # serves http://localhost:8000/web/
+```
+
+The page reads `data/papers.json` from `https://raw.githubusercontent.com/fr4nsyz/wiredIn/main/data/papers.json`, which the `papers` GitHub Action refreshes every 6 hours. Add `?local` to the URL to read the local copy instead.
+
+Sources: arXiv API, usenix.org technical-sessions pages, Semantic Scholar (CCS). Set an `S2_API_KEY` repo secret to avoid Semantic Scholar rate limits.
+
+Keywords are edited in the page and saved in the browser. `KEYWORDS` in `papers.py` controls which arXiv papers are kept past the 45-day window.
+
+
 terminal security intelligence aggregator — wired into the pulse of systems security.
 
 pulls from 28 feeds across cybersecurity research, kernel security, vendor advisories, exploits, and threat intel. designed for density: more signal, less noise.

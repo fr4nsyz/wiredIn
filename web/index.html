@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>wiredIn papers</title>
+<style>
+  :root {
+    --bg: #fbfbfa; --panel: #ffffff; --fg: #1d1d1f; --muted: #6b6b70; --line: #e4e4e2;
+    --accent: #2d5bd7; --mark: #fff1a8; --new: #1f8f4e; --chip: #eef1fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121214; --panel: #1a1a1d; --fg: #e8e8ea; --muted: #9a9aa2; --line: #2a2a2f;
+      --accent: #7c9cff; --mark: #5b4d00; --new: #4cc47f; --chip: #222838; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+  h1 { font-size: 20px; margin: 0; letter-spacing: -0.01em; }
+  .meta { color: var(--muted); font-size: 13px; }
+  .controls { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; min-width: 72px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; background: var(--chip); border: 1px solid var(--line);
+    border-radius: 999px; padding: 2px 10px; font-size: 13px; cursor: pointer; user-select: none; }
+  .chip.off { opacity: .45; }
+  .chip button { border: 0; background: none; color: var(--muted); cursor: pointer; padding: 0; font-size: 14px; line-height: 1; }
+  input[type=text] { background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; font: inherit; font-size: 14px; }
+  #q { flex: 1; min-width: 200px; }
+  label.tog { font-size: 13px; display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+  .count { color: var(--muted); font-size: 13px; margin: 16px 0 8px; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li { border-bottom: 1px solid var(--line); padding: 14px 2px; }
+  li a.t { color: var(--fg); font-weight: 600; text-decoration: none; }
+  li a.t:hover { color: var(--accent); }
+  .sub { color: var(--muted); font-size: 13px; margin-top: 2px; display: flex; flex-wrap: wrap; gap: 4px 10px; }
+  .venue, .sub a { color: var(--accent); font-weight: 500; }
+  .newb { color: var(--new); font-weight: 600; font-size: 12px; }
+  .hits { font-size: 12px; }
+  details { margin-top: 6px; font-size: 14px; }
+  summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+  mark { background: var(--mark); color: inherit; border-radius: 2px; }
+  #more { margin: 16px auto; display: block; background: var(--panel); color: var(--fg); border: 1px solid var(--line);
+    border-radius: 6px; padding: 8px 16px; cursor: pointer; font: inherit; }
+  .err { color: #c0392b; }
+  select { background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; font: inherit; font-size: 13px; }
+  .acc { color: var(--new); font-weight: 600; font-size: 12px; }
+  .score { font-variant-numeric: tabular-nums; }
+  .dis { margin-left: auto; border: 1px solid var(--line); background: none; color: var(--muted); border-radius: 4px; cursor: pointer; font-size: 12px; padding: 0 6px; }
+  li.dismissed { opacity: .45; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>wiredIn papers</h1>
+    <span class="meta" id="meta">loading...</span>
+  </header>
+
+  <div class="controls">
+    <div class="row">
+      <span class="label">Keywords</span>
+      <span id="kws" class="row"></span>
+      <input type="text" id="addkw" placeholder="add keyword + Enter" size="18">
+    </div>
+    <div class="row">
+      <span class="label">Venues</span>
+      <span id="venues" class="row"></span>
+    </div>
+    <div class="row">
+      <span class="label">Filter</span>
+      <input type="text" id="q" placeholder="search title, abstract, authors">
+      <label class="tog"><input type="checkbox" id="kwonly" checked> keyword matches only</label>
+      <label class="tog"><input type="checkbox" id="newonly" checked> new since last visit</label>
+      <label class="tog"><input type="checkbox" id="showdis"> show dismissed</label>
+      <select id="sort"><option value="rank">ranked</option><option value="date">newest</option></select>
+    </div>
+  </div>
+
+  <div class="count" id="count"></div>
+  <ul id="list"></ul>
+  <button id="more" hidden>show more</button>
+</div>
+
+<script>
+const REMOTE = "https://raw.githubusercontent.com/fr4nsyz/wiredIn/main/data/papers.json";
+const LOCAL = "../data/papers.json";
+const SOURCES = { "usenix-security": "USENIX Security", osdi: "OSDI", ccs: "CCS", arxiv: "arXiv" };
+const DEFAULT_KWS = [
+  "LLM", "agent", "LLM serving", "KV cache", "GPU", "CXL", "RDMA",
+  "disaggregat", "serverless", "Rust", "confidential computing", "TEE", "prompt injection",
+];
+const PAGE = 10;
+const TITLE_HIT = 3, ABSTRACT_HIT = 1, PEER_REVIEWED = 2;
+
+function load(key, fallback) {
+  try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; } catch { return fallback; }
+}
+function save(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch {} }
+
+const state = {
+  kws: load("kws", DEFAULT_KWS.map(k => ({ k, on: true }))),
+  venues: load("venues", Object.fromEntries(Object.keys(SOURCES).map(s => [s, true]))),
+  shown: PAGE,
+  dismissed: new Set(load("dismissed", [])),
+};
+// Baseline is pinned per tab so reloading doesn't clear the NEW markers.
+let lastVisit = "";
+try { lastVisit = sessionStorage.getItem("baseline") ?? load("lastVisit", ""); sessionStorage.setItem("baseline", lastVisit); } catch {}
+let papers = [];
+
+const $ = id => document.getElementById(id);
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+// Keywords match at a word start: "agent" hits "agentic", "TEE" skips "guarantee".
+const kwRe = k => new RegExp("(?<![a-z0-9])" + reEsc(k), "gi");
+
+const test = (re, s) => { re.lastIndex = 0; return re.test(s); };
+
+function score(p, res) {
+  const hits = [];
+  let s = 0;
+  for (const [k, re] of res) {
+    if (test(re, p.title)) s += TITLE_HIT;
+    else if (test(re, p.abstract)) s += ABSTRACT_HIT;
+    else continue;
+    hits.push(k);
+  }
+  if (p.source !== "arxiv" || p.accepted) s += PEER_REVIEWED;
+  return [s, hits];
+}
+
+function highlight(s, res) {
+  let out = esc(s);
+  for (const [, re] of res) out = out.replace(new RegExp(re.source, "gi"), m => "<mark>" + m + "</mark>");
+  return out;
+}
+
+function renderControls() {
+  $("kws").innerHTML = state.kws.map((x, i) =>
+    `<span class="chip ${x.on ? "" : "off"}" data-i="${i}">${esc(x.k)}<button data-del="${i}" title="remove">&times;</button></span>`).join("");
+  const counts = {};
+  for (const p of papers) counts[p.source] = (counts[p.source] || 0) + 1;
+  $("venues").innerHTML = Object.entries(SOURCES).map(([s, name]) =>
+    `<span class="chip ${state.venues[s] ? "" : "off"}" data-v="${s}">${name} <span class="meta">${counts[s] || 0}</span></span>`).join("");
+}
+
+function render() {
+  const active = state.kws.filter(x => x.on).map(x => [x.k, kwRe(x.k)]);
+  const q = $("q").value.trim().toLowerCase();
+  const kwOnly = $("kwonly").checked;
+  const newOnly = $("newonly").checked;
+  const showDis = $("showdis").checked;
+
+  const rows = [];
+  for (const p of papers) {
+    if (!state.venues[p.source]) continue;
+    if (newOnly && !(p.first_seen > lastVisit)) continue;
+    if (!showDis && state.dismissed.has(p.id)) continue;
+    const [s, h] = score(p, active);
+    if (kwOnly && active.length && !h.length) continue;
+    if (q && !(p.title + " " + p.abstract + " " + p.authors.join(" ")).toLowerCase().includes(q)) continue;
+    rows.push([p, h, s]);
+  }
+  if ($("sort").value === "rank") rows.sort((a, b) => b[2] - a[2]);
+
+  $("count").textContent = `${rows.length} papers`;
+  $("list").innerHTML = rows.slice(0, state.shown).map(([p, h, s]) => {
+    const authors = p.authors.length > 6 ? p.authors.slice(0, 6).join(", ") + ", et al." : p.authors.join(", ");
+    const isNew = lastVisit && p.first_seen > lastVisit;
+    const dis = state.dismissed.has(p.id);
+    return `<li class="${dis ? "dismissed" : ""}">
+      <a class="t" href="${esc(p.url)}" target="_blank" rel="noopener">${highlight(p.title, active)}</a>
+      <div class="sub">
+        <span class="score" title="rank score">${s}</span>
+        <span class="venue">${esc(p.venue)}</span><span>${esc(p.date)}</span>
+        ${p.accepted ? `<span class="acc">accepted: ${esc(p.accepted)}</span>` : ""}
+        ${isNew ? '<span class="newb">NEW</span>' : ""}
+        ${h.length ? `<span class="hits">${h.map(esc).join(" · ")}</span>` : ""}
+        ${p.pdf ? `<a href="${esc(p.pdf)}" target="_blank" rel="noopener">pdf</a>` : ""}
+        <button class="dis" data-id="${esc(p.id)}">${dis ? "restore" : "dismiss"}</button>
+      </div>
+      <div class="sub">${esc(authors)}</div>
+      ${p.abstract ? `<details><summary>abstract</summary>${highlight(p.abstract, active)}</details>` : ""}
+    </li>`;
+  }).join("");
+  $("more").hidden = rows.length <= state.shown;
+}
+
+$("kws").addEventListener("click", e => {
+  const del = e.target.dataset.del;
+  if (del !== undefined) state.kws.splice(+del, 1);
+  else if (e.target.closest(".chip")) { const x = state.kws[+e.target.closest(".chip").dataset.i]; x.on = !x.on; }
+  else return;
+  save("kws", state.kws); renderControls(); render();
+});
+$("addkw").addEventListener("keydown", e => {
+  const k = e.target.value.trim();
+  if (e.key !== "Enter" || !k) return;
+  if (!state.kws.some(x => x.k.toLowerCase() === k.toLowerCase())) state.kws.push({ k, on: true });
+  e.target.value = "";
+  save("kws", state.kws); renderControls(); render();
+});
+$("venues").addEventListener("click", e => {
+  const c = e.target.closest(".chip"); if (!c) return;
+  state.venues[c.dataset.v] = !state.venues[c.dataset.v];
+  save("venues", state.venues); renderControls(); render();
+});
+$("list").addEventListener("click", e => {
+  const id = e.target.dataset.id; if (!id) return;
+  if (state.dismissed.has(id)) state.dismissed.delete(id); else state.dismissed.add(id);
+  save("dismissed", [...state.dismissed]); render();
+});
+for (const id of ["q", "kwonly", "newonly", "showdis", "sort"]) $(id).addEventListener("input", () => { state.shown = PAGE; render(); });
+$("more").addEventListener("click", () => { state.shown += PAGE; render(); });
+
+async function fetchData() {
+  const useLocal = new URLSearchParams(location.search).has("local");
+  for (const [url, label] of useLocal ? [[LOCAL, "local"]] : [[REMOTE, "github"], [LOCAL, "local"]]) {
+    try {
+      const r = await fetch(url, { cache: "no-store" });
+      if (r.ok) return [await r.json(), label];
+    } catch {}
+  }
+  throw new Error("could not load papers.json from GitHub or ../data/");
+}
+
+fetchData().then(([data, label]) => {
+  papers = data.papers.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  $("meta").textContent = `${papers.length} papers · updated ${data.updated} · from ${label}`;
+  renderControls(); render();
+  save("lastVisit", data.updated);
+}).catch(e => { $("meta").innerHTML = `<span class="err">${esc(e.message)}</span>`; });
+</script>
+</body>
+</html>
